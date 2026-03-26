@@ -1,16 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoteSphere 🚀</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🌈 Animated Gradient Background */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff00cc, #00ffcc);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* 🧊 Glass Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;   /* ⬅️ increased left-right spacing */
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffcc;
+}
+
+/* 🔥 Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.signup {
+    background: #00ffcc;
+    color: black;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* 🚀 Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons button {
+    margin: 10px;
+}
+
+/* ✨ Floating animation */
+.hero h1 {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+}
+
+</style>
 </head>
 
 <body>
-    <h1>Index</h1>
-</body>
 
+<!-- 🌐 Navbar -->
+<div class="navbar">
+    <div class="logo">NoteSphere 🚀</div>
+    
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Community</a>
+        <button class="btn login" onclick="goToLogin()">Login</button>
+        <button class="btn signup" onclick="goToReg()">Sign Up</button>
+    </div>
+</div>
+
+<!-- 🚀 Hero Section -->
+<div class="hero">
+    <h1>Share Notes. Build Community.</h1>
+    <p>Your one-stop platform for learning, sharing, and growing together.</p>
+
+    <div class="hero-buttons">
+        <button class="btn signup">Get Started</button>
+        <button class="btn login">Browse Notes</button>
+    </div>
+</div>
+
+<script>
+ 
+// Optional: little click effect
+document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.style.transform = "scale(0.9)";
+        setTimeout(() => btn.style.transform = "scale(1.1)", 100);
+    });
+});
+function goToLogin() {
+    window.location.href = "http://localhost:5000/auth.html";
+}
+function goToReg() {
+    window.location.href = "http://localhost:5000/register.html";
+}
+   
+</script>
+
+</body>
 </html>

@@ -26,7 +26,7 @@ const handlenewUser = async (req,res)=>
        return res.sendStatus(409)
     }
     try{
-        const hashedpwd = await bcrypt.hash(pwd,10);
+        const hashedpwd = await bcrypt.hash(pwd,1);
         const newUser = {"username": user , "pwd":hashedpwd};
         userDb.setUsers([...userDb.users,newUser]);
         await fsPromise.writeFile(
